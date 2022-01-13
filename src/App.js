@@ -18,12 +18,12 @@ class App extends Component{
 
     this.state = {
       accountBalance: 14568.27
+     
     }
   }
-
+  
   render(){
-     return (
-       
+     return (      
       <Router>
          <div className="App">
            <Navbar bg="dark" variant="dark">
@@ -39,7 +39,7 @@ class App extends Component{
              <div className="content">
                <Routes>
                   <Route exact path = "/" element = {<Login />} />
-                  <Route exact path = "/home" element = {<Home />} />
+                  <Route exact path = "/home" element = {<Home accountBalance={this.state.accountBalance}/>} />
                   <Route exact path = "/userProfile" element = {<UserProfile />} />
                   <Route exact path = "*" element = {<ErrorPage />} />
                   <Route exact path = "/accountBalance" element = {<AccountBalance />} />
