@@ -36,19 +36,30 @@ function App () {
 
           <Navbar bg="dark" variant="dark">
           <Navbar.Brand>Bank of React</Navbar.Brand>
-            <ul className="">
+            <div className="row">
+              <div className="col">
                 <Link to ="/login">Login</Link> <br/>
-                <Link to ="/">Home</Link> <br/>
-                <Link to = "/userProfile">User Profile</Link> <br/>
-                <Link to = "/accountBalance">Account Balance</Link> <br/>
-                <Link to ="/debit">Debit</Link> <br/>
-            </ul>
+              </div>
+              <div className="col">
+                  <Link to ="/">Home</Link> <br/>
+              </div>  
+              <div className="col">
+                  <Link to = "/userProfile">User Profile</Link> <br/>
+               </div>
+               <div className="col">
+                  <Link to = "/accountBalance">Account Balance</Link> <br/>
+               </div>
+               <div className="col">
+                  <Link to ="/debit">Debit</Link> <br/>
+               </div>
+            </div>
           </Navbar>
+
           <Routes>
-          <Route path="/" element={<Login user={currentUser} mockLogIn={mockLogin}/>}/>
-          <Route path="/home" element={<Home accountBalance={accountBalance}/>}/>
+          <Route path="/login" element={<Login user={currentUser} mockLogIn={mockLogin}/>}/>
+          <Route path="/" element={<Home accountBalance={accountBalance}/>}/>
           <Route path="/userProfile" element={<UserProfile userName={currentUser.userName} memberSince={currentUser.memberSince}  />}/>
-          <Route path="/debit" element={<Debit />} />
+          <Route path="/debit" element={<Debit accountBalance={accountBalance}/>} />
 
           {/* error page */}
           <Route path="*" element={<ErrorPage />}/>

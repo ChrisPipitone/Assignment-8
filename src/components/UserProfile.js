@@ -8,7 +8,7 @@ function UserProfile(props) {
 
           <div>Username: {props.userName}</div>
           <div>Member Since: {props.memberSince}</div>
-          <Link to="/home">To Home</Link>
+          <Link to="/">To Home</Link>
         </div>
     );
   }

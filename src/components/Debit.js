@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-
+// import AccountBalance from "./components/AccountBalance";
+import AccountBalance from './AccountBalance';
 //was told to make this static
 
-
-export default function Debit() {
+export default function Debit(props) {
 
     const [amount, setAmount] = useState(0);
     const [name, setName] = useState("");
@@ -32,6 +32,13 @@ export default function Debit() {
 
     return (
         <div className="Debit">
+            <h1> Debit</h1>
+
+            <div className="accoutBalance">
+                <AccountBalance accountBalance={props.accountBalance}/>
+            </div>
+            
+
             {
                 debits.map((debit, key) => {
                     return(
@@ -42,8 +49,8 @@ export default function Debit() {
                 })
             }
             <form onSubmit={addNewDebit}>
-                <input onChange={onChangeName} type="text" placeholder="name" />
-                <input onChange={onChangeAmount} type="number" placeholder="amount" />
+                <input onChange={onChangeName} type="text" placeholder="name" required/>
+                <input onChange={onChangeAmount} type="number" placeholder="amount" required/>
                 <button>Submit</button>
             </form>
         </div>
