@@ -6,6 +6,6 @@ export default class AccountBalance extends Component {
             <div>
                  Balance: {this.props.accountBalance}
             </div>
-        )
+        );
     }
 }
