@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 
-export default class AccountBalance extends Component {
+export default class ErrorPage extends Component {
     render() {
         return (
             <div>
-                 Balance: {this.props.accountBalance}
+                ERROR 
             </div>
         )
     }

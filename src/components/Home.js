@@ -6,14 +6,13 @@ export default class Home extends Component {
     render() {
         return (
             <div> 
-                <h1> help</h1>
-                
-                <ul className="nav m-2 justify-content-center">
-                    <Link to ="/login">Login</Link> <br/>
-                    <Link to = "/userProfile">User Profile</Link> <br/>
-                </ul>
-                
+                <h1> Home</h1>
+                <br/>
+                <img src="https://letstalkpayments.com/wp-content/uploads/2016/04/Bank.png" alt="bank"/>
+                <h2>Bank of React</h2>
+          
+                <AccountBalance accountBalance={this.props.accountBalance}/>
             </div>
-        )
+        );
     }
 }
