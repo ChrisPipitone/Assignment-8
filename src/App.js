@@ -33,7 +33,7 @@ function App () {
         also should put login route here so it doesn't have nav bar links so users cant bypass login 
           i think?
         */}
-{/* 
+
           <Navbar bg="dark" variant="dark">
           <Navbar.Brand>Bank of React</Navbar.Brand>
             <ul className="">
@@ -41,13 +41,15 @@ function App () {
                 <Link to ="/">Home</Link> <br/>
                 <Link to = "/userProfile">User Profile</Link> <br/>
                 <Link to = "/accountBalance">Account Balance</Link> <br/>
+                <Link to ="/debit">Debit</Link> <br/>
             </ul>
-          </Navbar> */}
+          </Navbar>
           <Routes>
           <Route path="/" element={<Login user={currentUser} mockLogIn={mockLogin}/>}/>
           <Route path="/home" element={<Home accountBalance={accountBalance}/>}/>
           <Route path="/userProfile" element={<UserProfile userName={currentUser.userName} memberSince={currentUser.memberSince}  />}/>
-        
+          <Route path="/debit" element={<Debit />} />
+
           {/* error page */}
           <Route path="*" element={<ErrorPage />}/>
         </Routes>

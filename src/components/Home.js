@@ -1,5 +1,6 @@
 import React from 'react';
 import AccountBalance from './AccountBalance';
+import Debit from './Debit';
 import {Link} from 'react-router-dom'
 
 function Home(props) {
@@ -9,7 +10,7 @@ function Home(props) {
           <h1>Bank of React</h1>
           
           <Link to="/userProfile">User Profile</Link>
-          
+
           <AccountBalance accountBalance={props.accountBalance}/>
         </div>
     );
