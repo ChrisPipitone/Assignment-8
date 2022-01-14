@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import AccountBalance from './AccountBalance';
 //was told to make this static
 
-export default function Debit(props) {
+export default function Debit() {
 
     const [amount, setAmount] = useState(0);
     const [name, setName] = useState("");
@@ -13,7 +13,6 @@ export default function Debit(props) {
         {amount: 250, name: "Rent"}
     ]);
 
-
     const onChangeName = (e) => {
         setName(e.target.value);
     }
@@ -22,12 +21,13 @@ export default function Debit(props) {
         setAmount(parseInt(e.target.value));
     }
 
+
     const addNewDebit = (e) => {
         e.preventDefault();
         
         const newDebits = [...debits];
         newDebits.push({amount, name});
-        setDebits(newDebits);
+        setDebits(newDebits);     
     }
 
     return (
@@ -35,7 +35,7 @@ export default function Debit(props) {
             <h1> Debit</h1>
 
             <div className="accoutBalance">
-                <AccountBalance accountBalance={props.accountBalance}/>
+                <AccountBalance deduction={amount}/>
             </div>
             
 
@@ -51,7 +51,7 @@ export default function Debit(props) {
             <form onSubmit={addNewDebit}>
                 <input onChange={onChangeName} type="text" placeholder="name" required/>
                 <input onChange={onChangeAmount} type="number" placeholder="amount" required/>
-                <button>Submit</button>
+                <button>Add New Debit</button>
             </form>
         </div>
     )

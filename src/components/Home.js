@@ -3,7 +3,7 @@ import AccountBalance from './AccountBalance';
 import Debit from './Debit';
 import {Link} from 'react-router-dom'
 
-function Home(props) {
+function Home() {
     return (
         <div>
           <img src="https://res.cloudinary.com/andreahabib/image/upload/v1642026304/React_Bank_dk7n1a.png" alt="bank"/>
@@ -11,7 +11,7 @@ function Home(props) {
           
           <Link to="/userProfile">User Profile</Link>
 
-          <AccountBalance accountBalance={props.accountBalance}/>
+          <AccountBalance />
         </div>
     );
   }

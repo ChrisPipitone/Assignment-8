@@ -13,7 +13,7 @@ import AccountBalance from "./components/AccountBalance";
 
 function App () {
 
-  const [accountBalance, setAccountBalance] = useState(14568.27)
+  
   const [currentUser, setCurrentUser] = useState({ userName: "bob_loblaw", memberSince: '08/23/99' })
 
 
@@ -57,9 +57,10 @@ function App () {
 
           <Routes>
           <Route path="/login" element={<Login user={currentUser} mockLogIn={mockLogin}/>}/>
-          <Route path="/" element={<Home accountBalance={accountBalance}/>}/>
+          <Route path="/" element={<Home />}/>
           <Route path="/userProfile" element={<UserProfile userName={currentUser.userName} memberSince={currentUser.memberSince}  />}/>
-          <Route path="/debit" element={<Debit accountBalance={accountBalance}/>} />
+          <Route path="/debit" element={<Debit />} />
+          
 
           {/* error page */}
           <Route path="*" element={<ErrorPage />}/>
