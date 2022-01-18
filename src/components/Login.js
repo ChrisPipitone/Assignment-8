@@ -23,7 +23,7 @@ function LogIn(props) {
   }
 
     if (redirect) {
-      return (<Navigate to="/home"/>)
+      return (<Navigate to="/"/>)
     }
     return (
       <div>

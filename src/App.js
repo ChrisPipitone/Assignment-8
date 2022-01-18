@@ -11,6 +11,29 @@ import Debit from "./components/Debit";
 import ErrorPage from "./components/ErrorPage";
 import AccountBalance from "./components/AccountBalance";
 
+
+/*git 
+ Known errors
+
+  -account balance is NAN on home page not sure why since it appears correctly on other pages
+
+  -credit and debit are the same except for name changes 
+      both are 'one state behind' i found out that the use state hook is effectively a queue
+      so when the state is updated the initial values are the ones that are added to the debit/credit table
+
+      the account balance is only affected by the user provided value not the inial state but, it gets 
+      changed each state change. so when the user inputs 100, 100 is subtracted from the balance but the inital 
+      value is put into the table, then the user enters an other value, this value is again subtracted from the 
+      balance and the previously entered 100 is put into the table
+
+*/
+
+
+
+
+
+
+
 function App () {
 
   
@@ -52,6 +75,9 @@ function App () {
                <div className="col">
                   <Link to ="/debit">Debit</Link> <br/>
                </div>
+               <div className="col">
+                  <Link to ="/credit">Credit</Link> <br/>
+               </div>
             </div>
           </Navbar>
 
@@ -60,7 +86,7 @@ function App () {
           <Route path="/" element={<Home />}/>
           <Route path="/userProfile" element={<UserProfile userName={currentUser.userName} memberSince={currentUser.memberSince}  />}/>
           <Route path="/debit" element={<Debit />} />
-          
+          <Route path="/credit" element={<Credit />} />
 
           {/* error page */}
           <Route path="*" element={<ErrorPage />}/>
